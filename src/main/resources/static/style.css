@@ -1,0 +1,139 @@
+body{
+    background-color:rgb(238, 235, 231) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  
+    
+    }
+
+    #ss1{
+        background-image: url("./img/ss.jpg");
+        background-color: bisque;
+        background-size: cover;
+        background-repeat: no-repeat;
+       height:180px;
+
+
+
+    }
+    #ll{
+        color: rgb(0, 0, 0);
+        background-color: rgb(223, 230, 236);
+        font-family: 'Times New Roman', Times, serif;
+        font-size: medium;
+        font-weight: bold;
+        padding-left: 15px;
+         
+        padding-bottom: 14px;
+        height: 25px;
+    }
+    #si input{
+        border-radius: 10px;
+        text-align: center;
+        background:white;
+        border: 2px solid black;
+        font-family: 'Times New Roman', Times, serif;
+        width: 600px;
+        height:30px;
+        display: block;
+        margin-left: 28%;
+        margin-top: 20px;
+        font-weight: lighter;
+        font-size: 15px;
+       
+    }
+
+    #sib{
+        border-radius: 20px;
+        background:honeydew;
+        
+        font-weight: bold;
+        font-size: 20px;
+        display: block;
+        margin-left: 43%;
+        margin-top: 40px;
+        cursor: pointer;
+        width: 160px;
+        
+    }
+    #si1 input{
+        border-radius: 10px;
+        text-align: center;
+        background:white;
+        border: 2px solid black;
+        font-family: 'Times New Roman', Times, serif;
+        width: 700px;
+        height:30px;
+        display: block;
+        margin-left: 25%;
+        margin-top: 20px;
+        font-weight: lighter;
+        font-size: 15px;
+       
+    }
+
+
+
+   
+    
+    #si2 input{
+        border-radius: 10px;
+        text-align: center;
+        background:white;
+        border: 2px solid black;
+        font-family: 'Times New Roman', Times, serif;
+        width: 600px;
+        height:30px;
+        display: block;
+        margin-left: 28%;
+        margin-top: 20px;
+        font-weight: lighter;
+        font-size: 15px;
+       
+    }
+
+    #si2b{
+        border-radius: 20px;
+        background: honeydew;
+        
+        font-weight: bold;
+        font-size: 20px;
+        display: block;
+        margin-left: 44%;
+        margin-top: 40px;
+        width: 160px;
+        
+        
+    }
+    #si1b{
+        border-radius: 20px;
+        background: honeydew;
+        
+        font-weight: bold;
+        font-size: 20px;
+        display: block;
+        margin-left: 44%;
+        margin-top: 40px;
+        width: 160px;
+        
+        
+    }
+
+
+    #b1{
+       background-color: rgb(210, 223, 229);
+       height: 50px;
+       margin-top: 100px;
+    }
+    #s21 button{
+        border-radius: 20px;
+        background: honeydew;
+        
+        font-weight: bold;
+        font-size: 20px;
+        display: block;
+        margin-left: 44%;
+        margin-top: 40px;
+        width: 160px;
+    }
