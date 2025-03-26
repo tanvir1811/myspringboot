@@ -20,7 +20,7 @@ async function get() {
 
     // Send data to backend (assuming you have a REST API endpoint)
     try {
-        const response = await fetch('http://localhost:8080/api/users', {
+        const response = await fetch('https://myspringboot-10.onrender.com/api/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
