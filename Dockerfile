@@ -1,20 +1,24 @@
-# Use Maven with OpenJDK 21 to build the application
+# Use Maven with Java 21
 FROM maven:3.8.4-openjdk-21 AS build
+
 WORKDIR /app
 
-# Copy pom.xml and install dependencies
+# Copy the Maven project files and build dependencies offline
 COPY pom.xml ./
 RUN mvn dependency:go-offline
 
-# Copy source code and build the application
+# Copy the source code
 COPY src ./src
+
+# Build the application
 RUN mvn package -DskipTests
 
-# Use a minimal JDK runtime image for the final container
+# Use OpenJDK 21 in the final runtime image
 FROM openjdk:21-jdk-slim AS stage-1
+
 WORKDIR /app
 
-# Copy the built JAR from the previous stage
+# Copy the built jar file from the build stage
 COPY --from=build /app/target/*.jar app.jar
 
 # Run the application
