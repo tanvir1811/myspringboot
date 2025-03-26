@@ -28,7 +28,7 @@
     <script>
         // Function to fetch users from backend and display them in a table
         async function loadUsers() {
-            const response = await fetch('http://localhost:8080/api/users');  // Fetch data from Spring Boot API
+            const response = await fetch('https://myspringboot-10.onrender.com/api/users');  // Fetch data from Spring Boot API
             const users = await response.json();  // Parse the response as JSON
 
             const tableBody = document.getElementById('user-table-body');  // Get the <tbody> element to show users
