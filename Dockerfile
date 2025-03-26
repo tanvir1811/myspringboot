@@ -1,29 +1,31 @@
-# Use an official JDK image
+# Use Maven with OpenJDK 17 for building the application
 FROM maven:3.8.4-openjdk-17 AS build
 
 # Set working directory inside the container
 WORKDIR /app
 
-# Copy the pom.xml and download the dependencies
+# Copy the Maven project files
 COPY pom.xml ./
+
+# Download project dependencies
 RUN mvn dependency:go-offline
 
 # Copy the source code into the container
 COPY src ./src
 
-# Build the application
+# Build the application JAR file
 RUN mvn package -DskipTests
 
-# Use a minimal JDK runtime image for the final container
+# Use a lightweight OpenJDK runtime image for running the application
 FROM openjdk:17-jdk-slim
 
 WORKDIR /app
 
-# Copy the built JAR from the build stage
+# Copy the built JAR file from the builder container
 COPY --from=build /app/target/*.jar app.jar
 
-# Expose the application port
+# Expose port 8080 for the application
 EXPOSE 8080
 
-# Run the application
+# Command to run the Spring Boot application
 CMD ["java", "-jar", "app.jar"]
