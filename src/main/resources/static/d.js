@@ -1,36 +1,36 @@
 // Function to handle form submission
 async function get() {
     // Collect the data from the inputs
-    const name = document.getElementById('po').value;
-    const email = document.getElementById('po1').value;
-    const phone = document.getElementById('po2').value;
+    const uploaderName = document.getElementById('po').value; // Changed 'name' to 'uploaderName'
+    const uniqueId = document.getElementById('po1').value;
+    const driveLink = document.getElementById('po2').value;
 
     // Validate the input data
-    if (!name || !email || !phone) {
+    if (!uploaderName || !uniqueId || !driveLink) { // Validate for uploaderName, uniqueId, and driveLink
         alert('All fields are required!');
         return;
     }
 
-    // Create a student object with the entered data
-    const studentData = {
-        name: name,
-        email: email,
-        phone: phone
+    // Create a drive info object with the entered data
+    const driveInfoData = {
+        uploaderName: uploaderName, // Changed 'name' to 'uploaderName'
+        uniqueId: uniqueId,
+        driveLink: driveLink
     };
 
     // Send data to backend (assuming you have a REST API endpoint)
     try {
-        const response = await fetch('https://myspringboot-10.onrender.com/api/users', {
+        const response = await fetch('https://myspringboot-10.onrender.com/api/driveinfo', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(studentData)
+            body: JSON.stringify(driveInfoData)
         });
 
         if (response.ok) {
             // Show success message
-            document.getElementById('b1').innerHTML = `<p>Student Info submitted successfully!</p>`;
+            document.getElementById('b1').innerHTML = `<p>Drive Info submitted successfully!</p>`;
         } else {
             // Handle error
             document.getElementById('b1').innerHTML = `<p>Error submitting data. Please try again.</p>`;
