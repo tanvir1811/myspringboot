@@ -14,15 +14,18 @@ public class DriveInfoService {
     @Autowired
     private DriveInfoRepository driveInfoRepository;
 
+    // Fetch all drive info records
     public List<DriveInfo> getAllDriveInfo() {
-        return driveInfoRepository.findAll();  // Fetch all records from database
+        return driveInfoRepository.findAll();
     }
 
-    public DriveInfo saveDriveInfo(DriveInfo driveInfo) {
-        return driveInfoRepository.save(driveInfo);  // Save new drive info
-    }
-
+    // Fetch drive info by uniqueId
     public Optional<DriveInfo> getDriveInfoByUniqueId(String uniqueId) {
-        return driveInfoRepository.findByUniqueId(uniqueId);  // Fetch record by uniqueId
+        return driveInfoRepository.findByUniqueId(uniqueId); // Assuming you have a findByUniqueId method in the repository
+    }
+
+    // Save a new drive info record
+    public DriveInfo saveDriveInfo(DriveInfo driveInfo) {
+        return driveInfoRepository.save(driveInfo);
     }
 }
